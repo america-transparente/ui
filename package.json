@@ -1,0 +1,83 @@
+{
+  "name": "@america-transparente/ui",
+  "version": "0.0.1",
+  "main": "dist",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist"
+  },
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "tsup src/index.ts --format esm,cjs,iife --dts --minify",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public",
+    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet --fix"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.3",
+    "@heroicons/react": "^2.0.12",
+    "@types/node": "^16.11.66",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "tsup": "^6.2.3",
+    "typescript": "^4.8.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack5": "^6.5.12",
+    "@storybook/manager-webpack5": "^6.5.12",
+    "@storybook/node-logger": "^6.5.12",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "autoprefixer": "^10.4.12",
+    "babel-plugin-named-exports-order": "^0.0.2",
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-hooks": "^0.4.3",
+    "eslint-plugin-react": "^7.31.10",
+    "postcss": "^8.4.18",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "prop-types": "^15.8.1",
+    "tailwindcss": "^3.1.8",
+    "webpack": "^5.74.0"
+  }
+}
