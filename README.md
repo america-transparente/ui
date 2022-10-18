@@ -1,46 +1,28 @@
-# Getting Started with Create React App
+# America Transparente Design System
+**Warning**: this is still an experimental library
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Dependencies
+- tsup: bundles typescript `npm run build`
+- storybook: visualize components `npm run storybook`
 
-## Available Scripts
+## Goal
+Make the tools that we provide feel cohesive, make the users say, this feels like an America Transparente's tool, make them associate the design to us, make the screen easy to navigate, no overexaggerated UIs, no flashy designs, simple, elegant, and expansible.
 
-In the project directory, you can run:
+## Colors
+colors to be defined
 
-### `npm start`
+first draft:
+rl = reguleque, dd = duenos directos
+- primary-rl `#34911F`
+- primary-dd `#a21caf`
+- background-light `#e7e5e4`
+- accent-light `#fafafa`
+- contrast-light `#171717`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Spacing
+Gaps and padding are often `1rem`, or `p-4`, `gap-4` in Tailwind, let's stick with that :)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Usage
+`npm install @america-transparente/ui`, make sure to have installed React and Tailwind
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+add `'./node_modules/@america-transparente/ui/dist/*.js'` to your content array in your `tailwind.config.cjs`
