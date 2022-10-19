@@ -1,13 +1,6 @@
 import { ComponentMeta } from "@storybook/react";
-import {
-  CalendarDaysIcon,
-  CurrencyDollarIcon,
-  BriefcaseIcon,
-  BuildingLibraryIcon,
-  PlusIcon,
-} from "@heroicons/react/24/outline";
-
 import Card from "../components/core/Card";
+import { RegulequeCard } from "./examples/ReguelequeCard";
 
 export default {
   title: "core/Card",
@@ -19,191 +12,49 @@ export default {
   },
 } as ComponentMeta<typeof Card>;
 
-function ExampleModalContent() {
-  return (
-    <div className="max-h-[70vh] overflow-auto">
-      <p>this is the modal content</p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-        repellat nobis perferendis placeat odit, voluptatem, maxime quia est
-        atque a, nostrum excepturi velit asperiores assumenda ea. Molestias
-        architecto placeat aperiam.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-        repellat nobis perferendis placeat odit, voluptatem, maxime quia est
-        atque a, nostrum excepturi velit asperiores assumenda ea. Molestias
-        architecto placeat aperiam.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-        repellat nobis perferendis placeat odit, voluptatem, maxime quia est
-        atque a, nostrum excepturi velit asperiores assumenda ea. Molestias
-        architecto placeat aperiam.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-        repellat nobis perferendis placeat odit, voluptatem, maxime quia est
-        atque a, nostrum excepturi velit asperiores assumenda ea. Molestias
-        architecto placeat aperiam.
-      </p>
-    </div>
-  );
-}
-
-export const SampleCard = () => (
-  <Card
-    title="Articulo 1"
-    buttonText="Mas informacion"
-    color="primary-rl"
-    modalContent={<ExampleModalContent />}
-  >
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum nulla
-    libero rerum velit officiis nemo, deserunt assumenda veritatis at quisquam
-    facere id pariatur vel exercitationem iste, atque perferendis tenetur aut!
-  </Card>
-);
-
-export const RegulequeCard = () => (
-  <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-    <Card
-      title="Rene Emanuel Caceres Abarzua"
-      buttonText={<PlusIcon className="h-6 w-6 stroke-2" />}
-      color="primary-rl"
-      modalContent={<ExampleModalContent />}
-    >
-      <div className="space-y-2 text-neutral-600">
-        <div className="flex items-start gap-1 text-2xl font-bold">
-          <CurrencyDollarIcon className="h-8 w-8" />
-          <div className="-space-y-2">
-            <p>$666.420</p>
-            <p className="text-sm">Remuneración Bruta</p>
-          </div>
-        </div>
-        <div className=" flex items-center gap-1 font-bold">
-          <CalendarDaysIcon className="h-8 w-8" />
-          <p>Enero 2020</p>
-        </div>
-        <div className=" flex items-center gap-1 font-bold">
-          <BuildingLibraryIcon className="h-8 w-8 shrink-0" />
-          <p>Servicio Nacional de Desarrollo Web</p>
-        </div>
-        <div className=" flex items-center gap-1 font-bold">
-          <BriefcaseIcon className="h-8 w-8 shrink-0" />
-          <p>Licencia de Ensenanza Media</p>
-        </div>
-      </div>
-    </Card>
-    <Card
-      title="John Juan Doe Diaz"
-      buttonText="Mas informacion"
-      color="primary-rl"
-      modalContent={<ExampleModalContent />}
-    >
-      <div className="space-y-2 text-neutral-600">
-        <div className="flex items-start gap-1 text-2xl font-bold">
-          <CurrencyDollarIcon className="h-8 w-8" />
-          <div className="-space-y-2">
-            <p>$4.201.313</p>
-            <p className="text-sm">Remuneración Bruta</p>
-          </div>
-        </div>
-        <div className=" flex items-center gap-1 font-bold">
-          <CalendarDaysIcon className="h-8 w-8" />
-          <p>Enero 2020</p>
-        </div>
-        <div className=" flex items-center gap-1 font-bold">
-          <BuildingLibraryIcon className="h-8 w-8 shrink-0" />
-          <p>Servicio Nacional de Cualquier Cosa</p>
-        </div>
-        <div className=" flex items-center gap-1 font-bold">
-          <BriefcaseIcon className="h-8 w-8 shrink-0" />
-          <p>Ingeniero en Ingenieria de Proyectos Ingenieriles</p>
-        </div>
-      </div>
-    </Card>
-    <Card
-      title="Jane Juana Doe Diaz"
-      buttonText="Mas informacion"
-      color="primary-rl"
-      modalContent={<ExampleModalContent />}
-    >
-      <div className="space-y-2 text-neutral-600">
-        <div className="flex items-start gap-1 text-2xl font-bold">
-          <CurrencyDollarIcon className="h-8 w-8" />
-          <div className="-space-y-2">
-            <p>$4.206.900</p>
-            <p className="text-sm">Remuneración Bruta</p>
-          </div>
-        </div>
-        <div className=" flex items-center gap-1 font-bold">
-          <CalendarDaysIcon className="h-8 w-8" />
-          <p>Enero 2020</p>
-        </div>
-        <div className=" flex items-center gap-1 font-bold">
-          <BuildingLibraryIcon className="h-8 w-8 shrink-0" />
-          <p>Municipalidad de Nueva Imperial</p>
-        </div>
-        <div className=" flex items-center gap-1 font-bold">
-          <BriefcaseIcon className="h-8 w-8 shrink-0" />
-          <p>Ingenieria en Ejecucion Aplicada de Control de Plagas</p>
-        </div>
-      </div>
-    </Card>
-  </div>
-);
-
-export const CardsOnGrid = () => (
-  <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-    <Card
-      title="Articulo 1"
-      buttonText="Leer mas"
-      color="primary-dd"
-      modalContent={<ExampleModalContent />}
-    >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-      temporibus tenetur rem vel sequi expedita ab? Fugiat, modi pariatur.
-      Soluta modi ex minus magni cum rem dolorum quos error voluptatem.
-    </Card>
-    <Card
-      title="Articulo 2"
-      buttonText="Leer mas"
-      color="primary-dd"
-      modalContent={<ExampleModalContent />}
-    >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-      temporibus tenetur rem vel sequi expedita ab? Fugiat, modi pariatur.
-      Soluta modi ex minus magni cum rem dolorum quos error voluptatem.
-    </Card>
-    <Card
-      title="Articulo 3"
-      buttonText="Leer mas"
-      color="primary-dd"
-      modalContent={<ExampleModalContent />}
-    >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-      temporibus tenetur rem vel sequi expedita ab? Fugiat, modi pariatur.
-      Soluta modi ex minus magni cum rem dolorum quos error voluptatem.
-    </Card>
-    <Card
-      title="Articulo 4"
-      buttonText="Leer mas"
-      color="primary-dd"
-      modalContent={<ExampleModalContent />}
-    >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-      temporibus tenetur rem vel sequi expedita ab? Fugiat, modi pariatur.
-      Soluta modi ex minus magni cum rem dolorum quos error voluptatem.
-    </Card>
-    <Card
-      title="Articulo 5"
-      buttonText="Leer mas"
-      color="primary-dd"
-      modalContent={<ExampleModalContent />}
-    >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-      temporibus tenetur rem vel sequi expedita ab? Fugiat, modi pariatur.
-      Soluta modi ex minus magni cum rem dolorum quos error voluptatem.
-    </Card>
+export const RegulequeCards = () => (
+  <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <RegulequeCard
+      hit={{
+        nombre: "Rene Emanuel Caceres Abarzua",
+        remuneracion_bruta: "666.420",
+        ano: "2020",
+        mes: "Enero",
+        tipo_calificacion_profesional: "Licencia de Ensenanza Media",
+        nombre_organismo: "Servicio Nacional de Desarrollo Web",
+      }}
+    />
+    <RegulequeCard
+      hit={{
+        nombre: "Joaquin Jimenez Juan Jose Juarez del Estero",
+        remuneracion_bruta: "2.666.420",
+        ano: "2021",
+        mes: "Febrero",
+        tipo_calificacion_profesional: "Abogado",
+        nombre_organismo: "Servicio Nacional Saul Goodman",
+      }}
+    />
+    <RegulequeCard
+      hit={{
+        nombre: "Jennifer Jane Dominguez Doe",
+        remuneracion_bruta: "10.666.420",
+        ano: "2022",
+        mes: "Septiembre",
+        tipo_calificacion_profesional:
+          "Ingenieria Aplicada al Arbitraje de cripto cositas",
+        nombre_organismo: "Servicio Nacional de Criptomonedas",
+      }}
+    />
+    <RegulequeCard
+      hit={{
+        nombre: "Gato Gaston Gatuso III",
+        remuneracion_bruta: "69.696.696",
+        ano: "2022",
+        mes: "Septiembre",
+        tipo_calificacion_profesional:
+          "Ingenieria en Botar Pelos mencion Dormir",
+        nombre_organismo: "Servicio Nacional de Bolas de Pelo",
+      }}
+    />
   </div>
 );
