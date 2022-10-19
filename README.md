@@ -23,6 +23,8 @@ rl = reguleque, dd = duenos directos
 Gaps and padding are often `1rem`, or `p-4`, `gap-4` in Tailwind, let's stick with that :)
 
 ## Usage
-`npm install @america-transparente/ui`, make sure to have installed React and Tailwind
+[Add Tailwind CSS](https://tailwindcss.com/docs/installation/framework-guides) to your React project
 
-add `'./node_modules/@america-transparente/ui/dist/*.js'` to your content array in your `tailwind.config.cjs`
+`npm install @america-transparente/ui`, 
+
+add `'./node_modules/@america-transparente/ui/dist/*.js'` to your content array in your `tailwind.config.js`
