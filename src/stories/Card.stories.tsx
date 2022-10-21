@@ -1,6 +1,6 @@
 import { ComponentMeta } from "@storybook/react";
 import Card from "../components/core/Card";
-import { RegulequeCard } from "./examples/ReguelequeCard";
+import { RegulequeCard } from "./examples/RegulequeCard";
 
 export default {
   title: "core/Card",

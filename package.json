@@ -10,7 +10,7 @@
   },
   "scripts": {
     "prepublish": "npm run build",
-    "build": "tsup src/index.ts --format esm,cjs,iife --dts --minify",
+    "build": "tsup src/core.ts src/search.ts --format esm,cjs,iife --dts --minify",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet --fix"
@@ -18,11 +18,16 @@
   "dependencies": {
     "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^2.0.12",
+    "@meilisearch/instant-meilisearch": "^0.9.0",
+    "@popperjs/core": "^2.11.6",
     "@types/node": "^16.11.66",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "algoliasearch": "^4.14.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-instantsearch-hooks-web": "^6.37.0",
+    "react-popper": "^2.3.0",
     "react-scripts": "5.0.1",
     "tsup": "^6.2.3",
     "typescript": "^4.8.4"
