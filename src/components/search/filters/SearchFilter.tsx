@@ -40,14 +40,14 @@ function SearchFilter({ config, title }: SearchFilterProps) {
               ) : (
                 <ChevronDownIcon className="h-6 w-6" />
               )}
-              {title}
+              <span className="whitespace-nowrap">{title}</span>
             </Button>
           </Listbox.Button>
           {open && (
             <div
               ref={setPopperElement}
               style={styles.popper}
-              className="mt-2 rounded-xl border-2 border-grayscale-3 bg-grayscale-2"
+              className="mt-2 max-h-96 max-w-[15rem] overflow-auto rounded-xl border-2 border-grayscale-3 bg-grayscale-2"
               {...attributes.popper}
             >
               <Listbox.Options className="divide-y-2 divide-grayscale-3">

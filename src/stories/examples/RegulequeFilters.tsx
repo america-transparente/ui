@@ -11,7 +11,7 @@ function RegulequeFilters() {
 
   return (
     <InstantSearch searchClient={searchClient} indexName="reguleque">
-      <div className="flex gap-4">
+      <div className="flex gap-4 overflow-auto py-2">
         <SearchFilter
           title="Organismo"
           config={{
