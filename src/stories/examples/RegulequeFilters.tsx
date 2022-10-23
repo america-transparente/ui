@@ -1,4 +1,5 @@
 import SearchFilter from "../../components/search/filters/SearchFilter";
+import SortBy from "../../components/search/filters/SortBy";
 import { InstantSearch } from "react-instantsearch-hooks-web";
 import { instantMeiliSearch } from "@meilisearch/instant-meilisearch";
 
@@ -12,6 +13,30 @@ function RegulequeFilters() {
   return (
     <InstantSearch searchClient={searchClient} indexName="reguleque">
       <div className="flex gap-4 overflow-auto py-2">
+        <SortBy
+          config={{
+            items: [
+              { label: "Por relevancia", value: "reguleque" },
+              {
+                label: "Sueldo (asc)",
+                value: "reguleque/sort/remuneración_líquida_mensual:asc",
+              },
+              {
+                label: "Sueldo (desc)",
+                value: "reguleque/sort/remuneración_líquida_mensual:desc",
+              },
+              {
+                label: "Grado EUS (asc)",
+                value: "reguleque/sort/grado_eus:asc",
+              },
+              {
+                label: "Grado EUS (desc)",
+                value: "reguleque/sort/grado_eus:desc",
+              },
+            ],
+          }}
+          title="Ordenar por"
+        />
         <SearchFilter
           title="Organismo"
           config={{
