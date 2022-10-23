@@ -21,7 +21,7 @@ function SearchBar(props: UseSearchBoxProps) {
   }, [searchQuery]);
 
   return (
-    <div className="flex items-center rounded-lg bg-grayscale-2">
+    <div className="flex items-center rounded-2xl border border-grayscale-3 bg-grayscale-2">
       <div className="pl-2">
         <MagnifyingGlassIcon className="h-6 w-6" />
       </div>
@@ -29,7 +29,7 @@ function SearchBar(props: UseSearchBoxProps) {
         type="search"
         onChange={(e) => setDebouncedSearchQuery(e.target.value)}
         value={debouncedSearchQuery}
-        className="w-full rounded-lg bg-grayscale-2 p-2"
+        className="w-full rounded-lg rounded-r-2xl bg-grayscale-2 p-2"
         placeholder="Buscar funcionarios"
       />
       {searchQuery && (

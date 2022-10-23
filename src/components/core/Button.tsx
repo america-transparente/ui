@@ -28,7 +28,7 @@ function Button({
   // bg-primary-dd ring-primary-dd/50 bg-primary-rl ring-primary-rl/50 border-primary-dd/10 border-primary-rl/10 bg-grayscale-2 border-grayscale-2/10 ring-grayscale-2
 
   const padding = icon ? "p-2" : "py-2 px-4";
-  const commonStyles = `${padding} font-bold rounded-3xl transition-all ring-offset-1 focus:ring-2 border-2`;
+  const commonStyles = `${padding} font-bold rounded-3xl transition-all ring-offset-1 focus:ring-2 border`;
   const primaryStyles = `text-accent-light bg-${
     color || "grayscale-2"
   } border-${color || "grayscale-2"}/10 ring-${color || "grayscale-2"}/50`;
