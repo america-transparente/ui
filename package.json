@@ -7,9 +7,11 @@
   ],
   "exports": {
     "core": {
+      "types": "./dist/core.d.ts",
       "import": "./dist/core.mjs"
     },
     "search": {
+      "types": "./dist/search.d.ts",
       "import": "./dist/search.mjs"
     }
   },
