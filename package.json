@@ -6,7 +6,8 @@
     "dist"
   ],
   "exports": {
-    ".": "./dist"
+    "core": "./dist/core",
+    "search": "./dist/search"
   },
   "scripts": {
     "prepublish": "npm run build",
