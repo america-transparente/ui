@@ -27,4 +27,4 @@ Gaps and padding are often `1rem`, or `p-4`, `gap-4` in Tailwind, let's stick wi
 
 `npm install @america-transparente/ui`, 
 
-add `'./node_modules/@america-transparente/ui/dist/*.js'` to your content array in your `tailwind.config.js`
+add `"./node_modules/@america-transparente/ui/dist/**/*.js"` to your content array in your `tailwind.config.js`
