@@ -12,7 +12,7 @@ function RegulequeFilters() {
 
   return (
     <InstantSearch searchClient={searchClient} indexName="reguleque">
-      <div className="flex gap-4 overflow-auto py-2">
+      <div className="grid grid-cols-5 gap-4 overflow-auto py-2">
         <SearchSortBy
           config={{
             items: [

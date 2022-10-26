@@ -38,9 +38,12 @@ function SearchSortBy({ config, title }: SortByProps) {
   return (
     <Listbox onChange={applySortBy}>
       {({ open }) => (
-        <div>
+        <>
           <Listbox.Button as="div" ref={setReferenceElement}>
-            <Button primary={false} className="flex items-center">
+            <Button
+              primary={false}
+              className="flex w-full items-center justify-center"
+            >
               {open ? (
                 <ChevronUpIcon className="h-6 w-6" />
               ) : (
@@ -73,7 +76,7 @@ function SearchSortBy({ config, title }: SortByProps) {
               </Listbox.Options>
             </div>
           )}
-        </div>
+        </>
       )}
     </Listbox>
   );
