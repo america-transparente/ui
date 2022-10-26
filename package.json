@@ -1,12 +1,15 @@
 {
   "name": "@america-transparente/ui",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "main": "dist",
   "files": [
     "dist"
   ],
   "exports": {
-    "./core": "./dist/core",
+    "./core": {
+      "types": "./dist/core.d.ts",
+      "import": "./dist/core.js"
+    },
     "./search": {
       "types": "./dist/search.d.ts",
       "import": "./dist/search.js"
