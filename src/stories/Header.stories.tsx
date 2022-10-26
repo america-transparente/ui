@@ -1,6 +1,5 @@
 import { ComponentMeta } from "@storybook/react";
-import LogoWhite from "../../assets/logo_white.webp";
-
+import logoWhite from "../assets/logo_white.webp";
 import Header from "../components/core/Header";
 
 export default {
@@ -13,7 +12,7 @@ export default {
   },
 } as ComponentMeta<typeof Header>;
 
-export const Reguleque = () => (
+export const RegulequeHeader = () => (
   <Header
     title="reguleque"
     color="primary-rl"
@@ -25,7 +24,7 @@ export const Reguleque = () => (
         rel="noreferrer"
       >
         <img
-          src={LogoWhite}
+          src={logoWhite}
           alt="Inicio de América Transparente"
           className="h-8"
         />
@@ -34,7 +33,7 @@ export const Reguleque = () => (
   />
 );
 
-export const DuenosDirectos = () => (
+export const DuenosDirectosHeader = () => (
   <Header
     title="Dueños Directos"
     color="primary-dd"
@@ -46,7 +45,7 @@ export const DuenosDirectos = () => (
         rel="noreferrer"
       >
         <img
-          src={LogoWhite}
+          src={logoWhite}
           alt="Inicio de América Transparente"
           className="h-8"
         />
