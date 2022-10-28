@@ -32,9 +32,7 @@ function Header({ title, color, image }: HeaderProps) {
     <header className={headerStyles}>
       <div className="mx-auto flex max-w-6xl justify-between">
         <div className="flex items-center gap-4">
-          <h1 className="font-extrabold uppercase italic md:text-xl lg:text-2xl">
-            {title}
-          </h1>
+          <h1 className="text-2xl font-extrabold uppercase italic">{title}</h1>
           {image}
         </div>
         <Button
@@ -43,7 +41,7 @@ function Header({ title, color, image }: HeaderProps) {
           className="px-2 md:hidden"
           onClick={() => setIsMenuOpen(true)}
         >
-          <Bars3Icon className="h-4 w-4 text-black" />
+          <Bars3Icon className="h-6 w-6 text-black" />
         </Button>
 
         <Dialog
