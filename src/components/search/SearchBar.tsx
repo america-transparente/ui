@@ -29,7 +29,7 @@ function SearchBar(props: UseSearchBoxProps) {
         type="search"
         onChange={(e) => setDebouncedSearchQuery(e.target.value)}
         value={debouncedSearchQuery}
-        className="w-full rounded-lg rounded-r-2xl bg-grayscale-2 p-2"
+        className="w-full bg-transparent p-2"
         placeholder="Buscar funcionarios"
       />
       {searchQuery && (
