@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useSearchBox, UseSearchBoxProps } from "react-instantsearch-hooks-web";
 
 function SearchBar(props: UseSearchBoxProps) {
   const { refine, clear } = useSearchBox(props);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   const [searchQuery, setSearchQuery] = useState("");
   const [debouncedSearchQuery, setDebouncedSearchQuery] = useState(searchQuery);
@@ -27,9 +28,10 @@ function SearchBar(props: UseSearchBoxProps) {
       </div>
       <input
         type="search"
+        ref={searchInputRef}
         onChange={(e) => setDebouncedSearchQuery(e.target.value)}
         value={debouncedSearchQuery}
-        className="w-full bg-transparent p-2"
+        className="w-full rounded-r-3xl bg-transparent p-2"
         placeholder="Buscar funcionarios"
       />
       {searchQuery && (
@@ -39,6 +41,7 @@ function SearchBar(props: UseSearchBoxProps) {
           onClick={() => {
             clear(); // reset searched hits
             setDebouncedSearchQuery("");
+            searchInputRef.current?.focus(); // focus back to input once cleared
           }}
         >
           <XMarkIcon className="h-6 w-6" />
