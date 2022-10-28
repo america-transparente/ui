@@ -13,43 +13,9 @@ export default {
 } as ComponentMeta<typeof Header>;
 
 export const RegulequeHeader = () => (
-  <Header
-    title="reguleque"
-    color="primary-rl"
-    image={
-      <a
-        className="hidden md:flex"
-        href="https://americatransparente.org/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img
-          src={logoWhite}
-          alt="Inicio de América Transparente"
-          className="h-8"
-        />
-      </a>
-    }
-  />
+  <Header title="reguleque" color="primary-rl" imagePath={logoWhite} />
 );
 
 export const DuenosDirectosHeader = () => (
-  <Header
-    title="Dueños Directos"
-    color="primary-dd"
-    image={
-      <a
-        className="hidden md:flex"
-        href="https://americatransparente.org/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img
-          src={logoWhite}
-          alt="Inicio de América Transparente"
-          className="h-8"
-        />
-      </a>
-    }
-  />
+  <Header title="Dueños Directos" color="primary-dd" imagePath={logoWhite} />
 );

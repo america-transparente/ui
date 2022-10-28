@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, ImgHTMLAttributes } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
 import Button from "./Button";
@@ -6,7 +6,7 @@ import Button from "./Button";
 interface HeaderProps {
   title: string;
   color: string;
-  image: ReactNode;
+  imagePath: string;
 }
 
 function SupportUsButtons() {
@@ -22,7 +22,7 @@ function SupportUsButtons() {
   );
 }
 
-function Header({ title, color, image }: HeaderProps) {
+function Header({ title, color, imagePath }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const headerStyles = `bg-${color} p-4 text-accent-light`;
@@ -33,7 +33,18 @@ function Header({ title, color, image }: HeaderProps) {
       <div className="mx-auto flex max-w-6xl justify-between">
         <div className="flex items-center gap-4">
           <h1 className="text-2xl font-extrabold uppercase italic">{title}</h1>
-          {image}
+          <a
+            className="hidden md:flex"
+            href="https://americatransparente.org/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={imagePath}
+              alt="Inicio de América Transparente"
+              className="h-8"
+            />
+          </a>
         </div>
         <Button
           primary={false}
@@ -53,7 +64,17 @@ function Header({ title, color, image }: HeaderProps) {
           <div className="fixed inset-0 flex items-start justify-center">
             <Dialog.Panel className="w-full rounded-b-2xl bg-white">
               <div className={mobileMenuStyles}>
-                {image}
+                <a
+                  href="https://americatransparente.org/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={imagePath}
+                    alt="Inicio de América Transparente"
+                    className="h-8"
+                  />
+                </a>
                 <Button
                   primary={false}
                   icon={true}
