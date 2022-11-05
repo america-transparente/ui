@@ -1,4 +1,4 @@
-import { ReactNode, useState, ImgHTMLAttributes } from "react";
+import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
 import Button from "./Button";
@@ -25,7 +25,7 @@ function SupportUsButtons() {
 function Header({ title, color, imagePath }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const headerStyles = `bg-${color} p-4 text-accent-light`;
+  const headerStyles = `bg-${color} p-4 text-grayscale-2`;
   const mobileMenuStyles = `w-full flex justify-between items-center mb-4 bg-${color} p-4`;
 
   return (

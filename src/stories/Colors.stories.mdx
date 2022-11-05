@@ -1,0 +1,30 @@
+import { Meta } from "@storybook/addon-docs";
+
+import ColorCard from "./../components/ColorCard";
+
+<Meta title="core/Colors" />
+
+# Colors
+
+All colors are defined in the `tailwind.config.js` file
+
+## Primary
+
+A primary color is asociated with a project, dd stands for Duenos Directos and rl for Reguleque
+
+<div class="flex gap-4">
+  <ColorCard color="primary-dd" />
+  <ColorCard color="primary-rl" />
+</div>
+
+## Grayscale
+
+Grayscale for simple contrast
+
+<div class="flex gap-4">
+  <ColorCard color="grayscale-1" />
+  <ColorCard color="grayscale-2" />
+  <ColorCard color="grayscale-3" />
+  <ColorCard color="grayscale-4" />
+  <ColorCard color="grayscale-5" />
+</div>
