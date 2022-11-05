@@ -22,7 +22,7 @@ function SearchBar(props: UseSearchBoxProps) {
   }, [searchQuery]);
 
   return (
-    <div className="flex items-center rounded-3xl border border-grayscale-3 bg-grayscale-2">
+    <div className="flex items-center rounded-3xl border border-grayscale-4 bg-grayscale-2">
       <div className="pl-2">
         <MagnifyingGlassIcon className="h-6 w-6" />
       </div>

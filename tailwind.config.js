@@ -8,9 +8,6 @@ module.exports = {
           rl: "#34911F",
           dd: "#a21caf",
         },
-        background: {
-          light: "#e7e5e4",
-        },
         grayscale: {
           1: "#FFFFFF",
           2: "#F2F2F2",
