@@ -12,10 +12,18 @@ interface HeaderProps {
 function SupportUsButtons() {
   return (
     <div className="flex w-full flex-col gap-4 md:flex-row">
-      <Button primary={false} color="primary-rl">
+      <Button
+        primary={false}
+        color="primary-rl"
+        href="https://app.reveniu.com/checkout-custom-link/guYWYTIWJqCUnNtZQRdIzpE3DFkAXtd1"
+      >
         Donar
       </Button>
-      <Button primary={false} color="primary-rl">
+      <Button
+        primary={false}
+        color="primary-rl"
+        href="https://app.reveniu.com/checkout-custom-link/aSmPLaykZ0lAnrXpMcJUopEccz9F4kRE"
+      >
         Hazte socio
       </Button>
     </div>
