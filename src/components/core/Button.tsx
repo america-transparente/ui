@@ -23,6 +23,7 @@ function Button({
   onClick,
   color,
   icon,
+  ...rest
 }: ButtonProps & ButtonType) {
   // Tailwind doesn't really like dynamic values, so heres a comment for the compiler to generate:
   // bg-primary-dd ring-primary-dd/50 bg-primary-rl ring-primary-rl/50 border-primary-dd/10 border-primary-rl/10 bg-grayscale-2 border-grayscale-2/10 ring-grayscale-2
@@ -43,6 +44,7 @@ function Button({
     <button
       className={computedStyle}
       onClick={href ? () => window.open(href, "_blank") : onClick}
+      {...rest}
     >
       {children}
     </button>
