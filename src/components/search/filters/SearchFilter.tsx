@@ -11,9 +11,10 @@ import Button from "../../core/Button";
 interface SearchFilterProps {
   config: UseRefinementListProps;
   title: string;
+  label: string;
 }
 
-function SearchFilter({ config, title }: SearchFilterProps) {
+function SearchFilter({ config, title, label }: SearchFilterProps) {
   const { items, refine, canToggleShowMore, isShowingMore, toggleShowMore } =
     useRefinementList(config);
 
@@ -37,6 +38,7 @@ function SearchFilter({ config, title }: SearchFilterProps) {
             <Button
               primary={false}
               className="flex w-full items-center justify-center"
+              aria-label={label}
             >
               {open ? (
                 <ChevronUpIcon className="h-6 w-6" />

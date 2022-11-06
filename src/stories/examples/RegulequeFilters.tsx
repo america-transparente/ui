@@ -44,16 +44,23 @@ function RegulequeFilters() {
             showMore: true,
             limit: 6,
           }}
+          label="Filtrar por organismo gubernamental"
         />
         <SearchFilter
           title="Tipo Contrato"
           config={{ attribute: "tipo_contrato" }}
+          label="Filtrar por tipo de contrato"
         />
         <SearchFilter
           title="Año"
           config={{ attribute: "año", showMore: true, limit: 6 }}
+          label="Filtrar por año"
         />
-        <SearchFilter title="Mes" config={{ attribute: "mes", limit: 12 }} />
+        <SearchFilter
+          title="Mes"
+          config={{ attribute: "mes", limit: 12 }}
+          label="Filtrar por mes"
+        />
       </div>
     </InstantSearch>
   );

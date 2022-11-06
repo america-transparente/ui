@@ -59,6 +59,7 @@ function Header({ title, color, imagePath }: HeaderProps) {
           icon={true}
           className="px-2 md:hidden"
           onClick={() => setIsMenuOpen(true)}
+          aria-label="Opciones para apoyar al proyecto"
         >
           <Bars3Icon className="h-6 w-6 text-black" />
         </Button>

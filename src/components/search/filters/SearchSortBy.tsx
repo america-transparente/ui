@@ -43,6 +43,7 @@ function SearchSortBy({ config, title }: SortByProps) {
             <Button
               primary={false}
               className="flex w-full items-center justify-center"
+              aria-label="Ordenar filtros por"
             >
               {open ? (
                 <ChevronUpIcon className="h-6 w-6" />
