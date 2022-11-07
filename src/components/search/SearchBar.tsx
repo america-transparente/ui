@@ -2,8 +2,13 @@ import { useEffect, useState, useRef } from "react";
 import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useSearchBox, UseSearchBoxProps } from "react-instantsearch-hooks-web";
 
-function SearchBar(props: UseSearchBoxProps) {
-  const { refine, clear } = useSearchBox(props);
+interface SearchBarProps {
+  placeholder: string;
+  config?: UseSearchBoxProps;
+}
+
+function SearchBar({ placeholder, config }: SearchBarProps) {
+  const { refine, clear } = useSearchBox(config);
   const searchInputRef = useRef<HTMLInputElement>(null);
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -32,7 +37,7 @@ function SearchBar(props: UseSearchBoxProps) {
         onChange={(e) => setDebouncedSearchQuery(e.target.value)}
         value={debouncedSearchQuery}
         className="w-full rounded-r-3xl bg-transparent p-2"
-        placeholder="Buscar funcionarios"
+        placeholder={placeholder}
       />
       {searchQuery && (
         <button
