@@ -12,16 +12,12 @@ export default {
   },
 } as ComponentMeta<typeof Button>;
 
-export const Primary = () => (
-  <Button primary={true} color="primary-dd">
-    Más información
-  </Button>
-);
+export const Primary = () => <Button primary={true}>Más información</Button>;
 
 export const PrimaryWithLink = () => (
   <Button
     primary={true}
-    color="primary-rl"
+    color="[#a21caf]"
     href="https://app.reveniu.com/checkout-custom-link/guYWYTIWJqCUnNtZQRdIzpE3DFkAXtd1"
   >
     Donar

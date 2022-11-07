@@ -13,9 +13,9 @@ export default {
 } as ComponentMeta<typeof Header>;
 
 export const RegulequeHeader = () => (
-  <Header title="reguleque" color="primary-rl" imagePath={logoWhite} />
+  <Header title="reguleque" imagePath={logoWhite} />
 );
 
 export const DuenosDirectosHeader = () => (
-  <Header title="Dueños Directos" color="primary-dd" imagePath={logoWhite} />
+  <Header title="Dueños Directos" color="[#a21caf]" imagePath={logoWhite} />
 );

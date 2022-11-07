@@ -72,7 +72,6 @@ export const RegulequeCard = ({ hit }: RegulequeCardProps) => {
           <div className="flex w-full justify-end">
             <Button
               primary={true}
-              color="primary-rl"
               onClick={() => setIsModalOpen(true)}
               icon={true}
             >
