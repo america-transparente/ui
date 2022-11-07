@@ -5,7 +5,6 @@ import Button from "./Button";
 
 interface HeaderProps {
   title: string;
-  color: string;
   imagePath: string;
 }
 
@@ -30,11 +29,12 @@ function SupportUsButtons() {
   );
 }
 
-function Header({ title, color, imagePath }: HeaderProps) {
+function Header({ title, imagePath }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const headerStyles = `bg-${color} p-4 text-grayscale-2`;
-  const mobileMenuStyles = `w-full flex justify-between items-center mb-4 bg-${color} p-4`;
+  const headerStyles = "bg-primary p-4 text-grayscale-2";
+  const mobileMenuStyles =
+    "w-full flex justify-between items-center mb-4 bg-primary p-4";
 
   return (
     <header className={headerStyles}>
