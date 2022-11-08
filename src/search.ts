@@ -5,6 +5,7 @@ import SearchBar from "./components/search/SearchBar";
 import {
   useInfiniteHits,
   UseInfiniteHitsProps,
+  Snippet
 } from "react-instantsearch-hooks-web";
 
 export type { UseInfiniteHitsProps };
@@ -14,4 +15,5 @@ export {
   SearchSortBy,
   Provider,
   useInfiniteHits,
+  Snippet
 };
