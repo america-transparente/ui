@@ -36,7 +36,7 @@ function SearchBar({ placeholder, config }: SearchBarProps) {
         ref={searchInputRef}
         onChange={(e) => setDebouncedSearchQuery(e.target.value)}
         value={debouncedSearchQuery}
-        className="w-full rounded-r-3xl bg-transparent p-2"
+        className="w-full bg-transparent p-2 focus:outline-none"
         placeholder={placeholder}
       />
       {searchQuery && (

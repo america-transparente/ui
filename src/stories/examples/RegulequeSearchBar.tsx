@@ -11,7 +11,7 @@ function RegulequeFilters() {
 
   return (
     <InstantSearch searchClient={searchClient} indexName="reguleque">
-      <SearchBar />
+      <SearchBar placeholder="Buscar funcionarios" />
     </InstantSearch>
   );
 }
