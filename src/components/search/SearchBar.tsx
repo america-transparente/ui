@@ -16,24 +16,22 @@ function SearchBar({
   const { refine, clear, query } = useSearchBox(config);
   const searchInputRef = useRef<HTMLInputElement>(null);
 
-  if (captureSearchedQuery) {
-    captureSearchedQuery(query);
-  }
-
   const [searchQuery, setSearchQuery] = useState("");
   const [debouncedSearchQuery, setDebouncedSearchQuery] = useState(searchQuery);
 
-  // debounce, search when 200 miliseconds have pass from previus input change
+  // debounce, search when 200 miliseconds have pass from previous input change
   useEffect(() => {
     const timer = setTimeout(() => setSearchQuery(debouncedSearchQuery), 200);
     return () => clearTimeout(timer);
   }, [debouncedSearchQuery]);
 
   useEffect(() => {
-    if (searchQuery !== "") {
-      refine(searchQuery);
-    }
+    refine(searchQuery);
   }, [searchQuery]);
+
+  useEffect(() => {
+    if (captureSearchedQuery) captureSearchedQuery(query);
+  }, [query]);
 
   return (
     <div className="flex items-center rounded-3xl border border-grayscale-4 bg-grayscale-2">
