@@ -5,7 +5,9 @@ import { useSearchBox, UseSearchBoxProps } from "react-instantsearch-hooks-web";
 interface SearchBarProps {
   placeholder: string;
   config?: UseSearchBoxProps;
-  captureSearchedQuery?: React.Dispatch<React.SetStateAction<string>>;
+  captureSearchedQuery?:
+    | React.Dispatch<React.SetStateAction<string>>
+    | undefined;
 }
 
 function SearchBar({
@@ -29,6 +31,7 @@ function SearchBar({
     refine(searchQuery);
   }, [searchQuery]);
 
+  // runs when a setter is pass, "query" is the search query after being applied
   useEffect(() => {
     if (captureSearchedQuery) captureSearchedQuery(query);
   }, [query]);
