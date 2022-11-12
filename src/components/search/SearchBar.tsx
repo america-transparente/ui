@@ -5,11 +5,20 @@ import { useSearchBox, UseSearchBoxProps } from "react-instantsearch-hooks-web";
 interface SearchBarProps {
   placeholder: string;
   config?: UseSearchBoxProps;
+  captureSearchedQuery?: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function SearchBar({ placeholder, config }: SearchBarProps) {
-  const { refine, clear } = useSearchBox(config);
+function SearchBar({
+  placeholder,
+  config,
+  captureSearchedQuery,
+}: SearchBarProps) {
+  const { refine, clear, query } = useSearchBox(config);
   const searchInputRef = useRef<HTMLInputElement>(null);
+
+  if (captureSearchedQuery) {
+    captureSearchedQuery(query);
+  }
 
   const [searchQuery, setSearchQuery] = useState("");
   const [debouncedSearchQuery, setDebouncedSearchQuery] = useState(searchQuery);
@@ -28,30 +37,28 @@ function SearchBar({ placeholder, config }: SearchBarProps) {
 
   return (
     <div className="flex items-center rounded-3xl border border-grayscale-4 bg-grayscale-2">
-      <div className="pl-2">
-        <MagnifyingGlassIcon className="h-6 w-6" />
-      </div>
+      <span className="px-3">
+        <MagnifyingGlassIcon className="h-6 w-6 shrink-0" />
+      </span>
       <input
         type="search"
         ref={searchInputRef}
         onChange={(e) => setDebouncedSearchQuery(e.target.value)}
         value={debouncedSearchQuery}
-        className="w-full bg-transparent p-2 focus:outline-none"
+        className="w-full bg-transparent p-2 focus:outline-dotted focus:outline-2 focus:outline-primary/40"
         placeholder={placeholder}
       />
-      {searchQuery && (
-        <button
-          aria-label="Limpiar búsqueda"
-          className="px-2"
-          onClick={() => {
-            clear(); // reset searched hits
-            setDebouncedSearchQuery("");
-            searchInputRef.current?.focus(); // focus back to input once cleared
-          }}
-        >
-          <XMarkIcon className="h-6 w-6" />
-        </button>
-      )}
+      <button
+        aria-label="Limpiar búsqueda"
+        onClick={() => {
+          clear(); // reset searched hits
+          setDebouncedSearchQuery("");
+          searchInputRef.current?.focus(); // focus back to input once cleared
+        }}
+        className="px-3"
+      >
+        <XMarkIcon className="h-6 w-6 shrink-0" />
+      </button>
     </div>
   );
 }
