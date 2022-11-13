@@ -1,6 +1,6 @@
 {
   "name": "@america-transparente/ui",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "main": "dist",
   "files": [
     "dist"

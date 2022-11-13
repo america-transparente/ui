@@ -52,7 +52,7 @@ function SearchFilter({ config, title, label }: SearchFilterProps) {
             <div
               ref={setPopperElement}
               style={styles.popper}
-              className="mt-2 max-h-96 max-w-[15rem] overflow-auto rounded-xl border-2 border-grayscale-3 bg-grayscale-2"
+              className="mt-2 max-h-96 max-w-[15rem] overflow-auto rounded-xl border-2 border-grayscale-4 bg-grayscale-2"
               {...attributes.popper}
             >
               <Listbox.Options className="divide-y-2 divide-grayscale-3">
@@ -74,7 +74,7 @@ function SearchFilter({ config, title, label }: SearchFilterProps) {
                 {canToggleShowMore && (
                   <button
                     onClick={() => toggleShowMore()}
-                    className="w-full rounded-b-xl bg-primary-rl p-1.5 font-semibold text-white"
+                    className="w-full rounded-b-xl bg-primary p-1.5 font-semibold text-white"
                   >
                     {isShowingMore ? "Mostrar menos" : "Mostrar más"}
                   </button>
