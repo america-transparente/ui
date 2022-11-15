@@ -18,8 +18,15 @@ function SearchFilter({ config, title, label }: SearchFilterProps) {
   const { items, refine, canToggleShowMore, isShowingMore, toggleShowMore } =
     useRefinementList(config);
 
+  const [selected, setSelected] = useState<string>();
+
   function applyFilter(value: string) {
+    if (value === selected) {
+      refine("");
+      setSelected(undefined);
+    }
     refine(value);
+    setSelected(value);
   }
 
   // Popper.js
@@ -31,7 +38,7 @@ function SearchFilter({ config, title, label }: SearchFilterProps) {
   const { styles, attributes } = usePopper(referenceElement, popperElement);
 
   return (
-    <Listbox onChange={applyFilter}>
+    <Listbox as="div" value={selected} onChange={applyFilter}>
       {({ open }) => (
         <>
           <Listbox.Button as="div" ref={setReferenceElement}>
@@ -55,20 +62,24 @@ function SearchFilter({ config, title, label }: SearchFilterProps) {
               className="mt-2 max-h-96 max-w-[15rem] overflow-auto rounded-xl border-2 border-grayscale-4 bg-grayscale-2"
               {...attributes.popper}
             >
-              <Listbox.Options className="divide-y-2 divide-grayscale-3">
-                {items.map((item) => (
+              <Listbox.Options className="divide-y-2 divide-grayscale-3 outline-none">
+                {items.map((item, index) => (
                   <Listbox.Option
-                    key={item.value}
+                    key={index}
                     value={item.value}
-                    className={
-                      item.isRefined
-                        ? "p-1.5 font-bold hover:cursor-pointer hover:bg-grayscale-3"
-                        : "p-1.5 hover:cursor-pointer hover:bg-grayscale-3"
+                    className={({ active }) =>
+                      `p-1.5 hover:cursor-pointer hover:bg-grayscale-3 ${
+                        active && "font-bold"
+                      }`
                     }
                   >
-                    {item.value === "codigodeltrabajo"
-                      ? "Código del Trabajo"
-                      : item.value}
+                    {({ selected }) => (
+                      <span className={selected ? "font-bold" : ""}>
+                        {item.value === "codigodeltrabajo"
+                          ? "Código del Trabajo"
+                          : item.value}
+                      </span>
+                    )}
                   </Listbox.Option>
                 ))}
                 {canToggleShowMore && (

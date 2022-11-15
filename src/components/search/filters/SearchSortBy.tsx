@@ -5,22 +5,24 @@ import { usePopper } from "react-popper";
 import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import Button from "../../core/Button";
 
-interface Option {
-  value: string;
-  label: string;
-}
-
 interface SortByProps {
   config: UseSortByProps;
   title: string;
 }
 
 function SearchSortBy({ config, title }: SortByProps) {
-  const { options, refine, currentRefinement } = useSortBy(config);
+  const { options, refine } = useSortBy(config);
 
-  console.log(currentRefinement);
+  const [selected, setSelected] = useState<string>();
 
-  const [selectedOption, setSelectedOption] = useState("");
+  function applySortBy(value: string) {
+    if (value === selected) {
+      refine("");
+      setSelected(undefined);
+    }
+    refine(value);
+    setSelected(value);
+  }
 
   // Popper.js
   const [referenceElement, setReferenceElement] =
@@ -30,13 +32,8 @@ function SearchSortBy({ config, title }: SortByProps) {
   );
   const { styles, attributes } = usePopper(referenceElement, popperElement);
 
-  function applySortBy(option: Option) {
-    setSelectedOption(option.label);
-    refine(option.value);
-  }
-
   return (
-    <Listbox onChange={applySortBy}>
+    <Listbox value={selected} onChange={applySortBy}>
       {({ open }) => (
         <>
           <Listbox.Button as="div" ref={setReferenceElement}>
@@ -57,21 +54,25 @@ function SearchSortBy({ config, title }: SortByProps) {
             <div
               ref={setPopperElement}
               style={styles.popper}
-              className="mt-2 max-h-96 max-w-[15rem] overflow-auto rounded-xl border-2 border-grayscale-3 bg-grayscale-2"
+              className="mt-2 max-h-96 max-w-[15rem] overflow-auto rounded-xl border-2 border-grayscale-4 bg-grayscale-2"
               {...attributes.popper}
             >
-              <Listbox.Options className="divide-y-2 divide-grayscale-3">
+              <Listbox.Options className="divide-y-2 divide-grayscale-3 outline-none">
                 {options.map((option) => (
                   <Listbox.Option
                     key={option.label}
-                    value={option}
-                    className={
-                      selectedOption === option.label
-                        ? "p-1.5 font-bold hover:cursor-pointer hover:bg-grayscale-3"
-                        : "p-1.5 hover:cursor-pointer hover:bg-grayscale-3"
+                    value={option.value}
+                    className={({ active }) =>
+                      `p-1.5 hover:cursor-pointer hover:bg-grayscale-3 ${
+                        active && "font-bold"
+                      }`
                     }
                   >
-                    {option.label}
+                    {({ selected }) => (
+                      <span className={selected ? "font-bold" : ""}>
+                        {option.label}
+                      </span>
+                    )}
                   </Listbox.Option>
                 ))}
               </Listbox.Options>
