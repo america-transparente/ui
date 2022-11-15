@@ -63,25 +63,32 @@ function SearchFilter({ config, title, label }: SearchFilterProps) {
               {...attributes.popper}
             >
               <Listbox.Options className="divide-y-2 divide-grayscale-3 outline-none">
-                {items.map((item, index) => (
-                  <Listbox.Option
-                    key={index}
-                    value={item.value}
-                    className={({ active }) =>
-                      `p-1.5 hover:cursor-pointer hover:bg-grayscale-3 ${
-                        active && "font-bold"
-                      }`
-                    }
-                  >
-                    {({ selected }) => (
-                      <span className={selected ? "font-bold" : ""}>
-                        {item.value === "codigodeltrabajo"
-                          ? "Código del Trabajo"
-                          : item.value}
-                      </span>
-                    )}
-                  </Listbox.Option>
-                ))}
+                {items
+                  .sort((a, b) => parseInt(b.value) - parseInt(a.value))
+                  .map((item, index) => {
+                    const label =
+                      item.label.charAt(0).toUpperCase() + item.label.slice(1);
+
+                    return (
+                      <Listbox.Option
+                        key={index}
+                        value={item.value}
+                        className={({ active }) =>
+                          `p-1.5 hover:cursor-pointer hover:bg-grayscale-3 ${
+                            active && "font-bold"
+                          }`
+                        }
+                      >
+                        {({ selected }) => (
+                          <span className={selected ? "font-bold" : ""}>
+                            {item.label === "codigodeltrabajo"
+                              ? "Código del Trabajo"
+                              : label}
+                          </span>
+                        )}
+                      </Listbox.Option>
+                    );
+                  })}
                 {canToggleShowMore && (
                   <button
                     onClick={() => toggleShowMore()}
