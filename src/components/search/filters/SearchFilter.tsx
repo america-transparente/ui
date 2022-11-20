@@ -18,15 +18,8 @@ function SearchFilter({ config, title, label }: SearchFilterProps) {
   const { items, refine, canToggleShowMore, isShowingMore, toggleShowMore } =
     useRefinementList(config);
 
-  const [selected, setSelected] = useState<string>();
-
   function applyFilter(value: string) {
-    if (value === selected) {
-      refine("");
-      setSelected(undefined);
-    }
     refine(value);
-    setSelected(value);
   }
 
   // Popper.js
@@ -38,7 +31,7 @@ function SearchFilter({ config, title, label }: SearchFilterProps) {
   const { styles, attributes } = usePopper(referenceElement, popperElement);
 
   return (
-    <Listbox as="div" value={selected} onChange={applyFilter}>
+    <Listbox as="div" onChange={applyFilter}>
       {({ open }) => (
         <>
           <Listbox.Button as="div" ref={setReferenceElement}>
@@ -73,19 +66,13 @@ function SearchFilter({ config, title, label }: SearchFilterProps) {
                       <Listbox.Option
                         key={index}
                         value={item.value}
-                        className={({ active }) =>
-                          `p-1.5 hover:cursor-pointer hover:bg-grayscale-3 ${
-                            active && "font-bold"
-                          }`
-                        }
+                        className="p-1.5 hover:cursor-pointer hover:bg-grayscale-3"
                       >
-                        {({ selected }) => (
-                          <span className={selected ? "font-bold" : ""}>
-                            {item.label === "codigodeltrabajo"
-                              ? "Código del Trabajo"
-                              : label}
-                          </span>
-                        )}
+                        <span className={item.isRefined ? "font-bold" : ""}>
+                          {item.label === "codigodeltrabajo"
+                            ? "Código del Trabajo"
+                            : label}
+                        </span>
                       </Listbox.Option>
                     );
                   })}

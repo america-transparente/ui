@@ -13,15 +13,8 @@ interface SortByProps {
 function SearchSortBy({ config, title }: SortByProps) {
   const { options, refine } = useSortBy(config);
 
-  const [selected, setSelected] = useState<string>();
-
   function applySortBy(value: string) {
-    if (value === selected) {
-      refine("");
-      setSelected(undefined);
-    }
     refine(value);
-    setSelected(value);
   }
 
   // Popper.js
@@ -33,7 +26,7 @@ function SearchSortBy({ config, title }: SortByProps) {
   const { styles, attributes } = usePopper(referenceElement, popperElement);
 
   return (
-    <Listbox value={selected} onChange={applySortBy}>
+    <Listbox onChange={applySortBy}>
       {({ open }) => (
         <>
           <Listbox.Button as="div" ref={setReferenceElement}>
@@ -62,17 +55,9 @@ function SearchSortBy({ config, title }: SortByProps) {
                   <Listbox.Option
                     key={option.label}
                     value={option.value}
-                    className={({ active }) =>
-                      `p-1.5 hover:cursor-pointer hover:bg-grayscale-3 ${
-                        active && "font-bold"
-                      }`
-                    }
+                    className="p-1.5 hover:cursor-pointer hover:bg-grayscale-3"
                   >
-                    {({ selected }) => (
-                      <span className={selected ? "font-bold" : ""}>
-                        {option.label}
-                      </span>
-                    )}
+                    {option.label}
                   </Listbox.Option>
                 ))}
               </Listbox.Options>
