@@ -27,7 +27,7 @@
   },
   "scripts": {
     "prepare": "npm run build",
-    "build": "tsup src/core.ts src/search.ts --format esm,cjs,iife --dts --minify",
+    "build": "tsup src/core.ts src/search.ts --format esm,cjs --treeshake --dts --minify",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet --fix"
