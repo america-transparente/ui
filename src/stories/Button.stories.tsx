@@ -7,7 +7,10 @@ export default {
   component: Button,
   parameters: {
     backgrounds: {
-      values: [{ name: "grayscale-1", value: "#ffff", default: true }],
+      values: [
+        { name: "ligh", value: "#e7e5e4", default: true },
+        { name: "dark", value: "#242424", default: true },
+      ],
     },
   },
 } as ComponentMeta<typeof Button>;

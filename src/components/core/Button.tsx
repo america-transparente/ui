@@ -1,7 +1,7 @@
 import { DetailedHTMLProps, ReactNode } from "react";
 
 interface ButtonProps {
-  primary: boolean;
+  primary?: boolean;
   className?: string;
   children: ReactNode;
   href?: string;
@@ -32,11 +32,11 @@ function Button({
 
   const padding = icon ? "p-2" : "py-2 px-4";
 
-  const commonStyles = `${padding} font-bold rounded-3xl transition-all ring-offset-1 focus:ring-2 border hover:brightness-75 duration-300`;
+  const commonStyles = `${padding} border font-bold rounded-3xl transition border focus:brightness-110 hover:brightness-75 duration-300`;
 
-  const primaryStyles = `text-grayscale-2 bg-${color} border-${color}/10 ring-${color}/50`;
+  const primaryStyles = "text-white bg-primary border-primary/10";
   const secondaryStyles =
-    "text-black bg-grayscale-2 border-grayscale-4 ring-grayscale-4";
+    "text-light-text-100 dark:text-dark-text-100 bg-light-neutral-200 border-light-neutral-300 dark:bg-dark-neutral-200 dark:border-dark-neutral-100";
 
   const computedStyle = `${commonStyles} ${
     primary ? primaryStyles : secondaryStyles

@@ -1,5 +1,8 @@
+import { InstantSearch } from "react-instantsearch-hooks-web";
+import { instantMeiliSearch } from "@meilisearch/instant-meilisearch";
+
 import { ComponentMeta } from "@storybook/react";
-import logoWhite from "../assets/logo_white.webp";
+import logoAT from "../assets/at_logo.webp";
 import Header from "../components/core/Header";
 
 export default {
@@ -7,15 +10,32 @@ export default {
   component: Header,
   parameters: {
     backgrounds: {
-      values: [{ name: "app background", value: "#e7e5e4", default: true }],
+      values: [
+        { name: "ligh", value: "#e7e5e4", default: true },
+        { name: "dark", value: "#242424", default: true },
+      ],
     },
   },
 } as ComponentMeta<typeof Header>;
 
 export const RegulequeHeader = () => (
-  <Header title="reguleque" imagePath={logoWhite} />
+  <Header
+    title="Reguleque"
+    imagePath={logoAT}
+    description="Reguleque es un buscador de funcionarios públicos de Chile, basado en distintas fuentes de transparencia estatal."
+  />
 );
 
 export const DuenosDirectosHeader = () => (
-  <Header title="Dueños Directos" color="[#a21caf]" imagePath={logoWhite} />
+  <Header
+    title="Dueños Directos"
+    imagePath={logoAT}
+    description="Dueños Directos es un buscador 
+    de documentos del Diario Oficial
+    de Chile, que permite rápidamente
+    buscar entre miles de constituciones
+    y otros archivos legales de 
+    organizaciones."
+    color="[#a21caf]"
+  />
 );

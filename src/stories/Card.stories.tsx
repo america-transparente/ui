@@ -7,7 +7,10 @@ export default {
   component: Card,
   parameters: {
     backgrounds: {
-      values: [{ name: "app background", value: "#e7e5e4", default: true }],
+      values: [
+        { name: "ligh", value: "#e7e5e4", default: true },
+        { name: "dark", value: "#242424", default: true },
+      ],
     },
   },
 } as ComponentMeta<typeof Card>;
@@ -16,44 +19,44 @@ export const RegulequeCards = () => (
   <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
     <RegulequeCard
       hit={{
-        nombre: "Rene Emanuel Caceres Abarzua",
+        nombre: "Abraham Gabriel Curiche Huenulao",
         remuneracion_bruta: "666.420",
         ano: "2020",
         mes: "Enero",
-        tipo_calificacion_profesional: "Licencia de Ensenanza Media",
-        nombre_organismo: "Servicio Nacional de Desarrollo Web",
+        tipo_calificacion_profesional: "Ingeniero En Negocios Internacionales",
+        nombre_organismo:
+          "AGENCIA CHILENA DE COOPERACIÓN INTERNACIONAL PARA EL DESARROLLO (AGCID)",
       }}
     />
     <RegulequeCard
       hit={{
-        nombre: "Joaquin Jimenez Juan Jose Juarez del Estero",
-        remuneracion_bruta: "2.666.420",
+        nombre: "Francisco Aurelio Curiqueo Leon",
+        remuneracion_bruta: "3.499.695",
         ano: "2021",
         mes: "Febrero",
         tipo_calificacion_profesional: "Abogado",
-        nombre_organismo: "Servicio Nacional Saul Goodman",
+        nombre_organismo: "Corporación Municipal de Castro",
       }}
     />
     <RegulequeCard
       hit={{
-        nombre: "Jennifer Jane Dominguez Doe",
-        remuneracion_bruta: "10.666.420",
+        nombre: "Ximena Carolina Daroch Hernandez",
+        remuneracion_bruta: "2.114.139",
         ano: "2022",
         mes: "Septiembre",
         tipo_calificacion_profesional:
-          "Ingenieria Aplicada al Arbitraje de cripto cositas",
-        nombre_organismo: "Servicio Nacional de Criptomonedas",
+          "Ingeniero de Ejecución En Control de Gestión",
+        nombre_organismo: "Servicio Nacional de Aduanas",
       }}
     />
     <RegulequeCard
       hit={{
-        nombre: "Gato Gaston Gatuso III",
-        remuneracion_bruta: "69.696.696",
+        nombre: "Fernando Luis Baeriswyl Rada",
+        remuneracion_bruta: "1.069.092",
         ano: "2022",
         mes: "Septiembre",
-        tipo_calificacion_profesional:
-          "Ingenieria en Botar Pelos mencion Dormir",
-        nombre_organismo: "Servicio Nacional de Bolas de Pelo",
+        tipo_calificacion_profesional: "Técnico Comercio Exterior",
+        nombre_organismo: "Consejo de Defensa del Estado (CDE)",
       }}
     />
   </div>

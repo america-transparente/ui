@@ -1,4 +1,4 @@
-import { Meta } from "@storybook/addon-docs";
+import { Meta, ColorPalette, ColorItem } from "@storybook/addon-docs";
 
 import ColorCard from "./../components/ColorCard";
 
@@ -8,23 +8,48 @@ import ColorCard from "./../components/ColorCard";
 
 All colors are defined in the `tailwind.config.js` file
 
-## Primary
+<ColorPalette>
+  <ColorItem
+    title="Reguleque Primary"
+    colors={{
+      primary: "#34911F",
+    }}
+  />
+  <ColorItem
+    title="Duenos Directos Primary"
+    colors={{
+      primary: "#a21caf",
+    }}
+  />
+  <ColorItem
+    title="Light Neutrals"
+    colors={{
+      "light-neutral-100": "#FFFFFF",
+      "light-neutral-200": "#F9F9F9",
+      "light-neutral-300": "#d1d1d1",
+    }}
+  />
+  <ColorItem
+    title="Dark Neutrals"
+    colors={{
+      "dark-neutral-100": "#484848",
+      "dark-neutral-200": "#2F2F2F",
+      "dark-neutral-300": "#242424",
+    }}
+  />
+  <ColorItem
+    title="Light Text"
+    colors={{
+      "light-text-100": "#213547",
+      "light-text-200": "#717171",
+    }}
+  />
+  <ColorItem
+    title="Dark Text"
+    colors={{
+      "dark-text-100": "#E4E4E4",
+      "dark-text-200": "#A0A0A0",
+    }}
+  />
 
-A primary color is asociated with a project, dd stands for Duenos Directos and rl for Reguleque
-
-<div class="flex gap-4">
-  <ColorCard color="[#34911F]" colorName="#34911F" />
-  <ColorCard color="[#a21caf]" colorName="#a21caf" />
-</div>
-
-## Grayscale
-
-Grayscale for simple contrast
-
-<div class="flex gap-4">
-  <ColorCard color="grayscale-1" />
-  <ColorCard color="grayscale-2" />
-  <ColorCard color="grayscale-3" />
-  <ColorCard color="grayscale-4" />
-  <ColorCard color="grayscale-5" />
-</div>
+</ColorPalette>

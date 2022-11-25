@@ -1,7 +1,6 @@
-import SearchFilter from "../../components/search/filters/SearchFilter";
-import SearchSortBy from "../../components/search/filters/SearchSortBy";
 import { InstantSearch } from "react-instantsearch-hooks-web";
 import { instantMeiliSearch } from "@meilisearch/instant-meilisearch";
+import { SearchBar, SearchSortBy, SearchFilter } from "../../search";
 
 function RegulequeFilters() {
   const searchClient = instantMeiliSearch(
@@ -12,7 +11,8 @@ function RegulequeFilters() {
 
   return (
     <InstantSearch searchClient={searchClient} indexName="reguleque">
-      <div className="grid grid-cols-5 gap-4 overflow-auto py-2">
+      <SearchBar placeholder="Buscar funcionarios" />
+      <div className="mt-4 grid grid-cols-5 gap-4 overflow-auto">
         <SearchSortBy
           config={{
             items: [

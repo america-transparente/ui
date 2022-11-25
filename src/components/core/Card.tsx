@@ -1,15 +1,13 @@
 import { ReactNode } from "react";
 
 interface CardProps {
-  title?: string;
   children: ReactNode;
 }
 
-function Card({ title, children }: CardProps) {
+function Card({ children }: CardProps) {
   return (
-    <article className="flex w-full flex-col rounded-2xl border border-grayscale-4 bg-grayscale-2 p-4 shadow">
-      {title && <h2 className="mb-2 text-xl font-extrabold">{title}</h2>}
-      <div className="flex-auto">{children}</div>
+    <article className="flex w-full flex-col rounded-2xl border border-light-neutral-100 bg-light-neutral-200 text-light-text-200 shadow dark:border-dark-neutral-100 dark:bg-dark-neutral-200 dark:text-dark-text-200">
+      {children}
     </article>
   );
 }

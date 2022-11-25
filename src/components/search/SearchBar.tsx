@@ -37,7 +37,10 @@ function SearchBar({
   }, [query]);
 
   return (
-    <div className="flex items-center rounded-3xl border border-grayscale-4 bg-grayscale-2">
+    <div
+      className="flex items-center rounded-3xl border border-light-neutral-300 bg-light-neutral-200 text-light-text-100
+    dark:border-dark-neutral-100 dark:bg-dark-neutral-200 dark:text-dark-text-100"
+    >
       <span className="px-3">
         <MagnifyingGlassIcon className="h-6 w-6 shrink-0" />
       </span>

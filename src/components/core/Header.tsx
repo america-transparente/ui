@@ -1,113 +1,73 @@
-import { useState } from "react";
-import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
+import { SparklesIcon, LinkIcon } from "@heroicons/react/20/solid";
 import Button from "./Button";
+import Card from "./Card";
 
 interface HeaderProps {
   title: string;
   imagePath: string;
   color?: string;
+  description: string;
 }
 
-function SupportUsButtons() {
-  return (
-    <div className="flex w-full flex-col gap-4 md:flex-row">
-      <Button
-        primary={false}
-        color="primary-rl"
-        href="https://app.reveniu.com/checkout-custom-link/guYWYTIWJqCUnNtZQRdIzpE3DFkAXtd1"
-      >
-        Donar
-      </Button>
-      <Button
-        primary={false}
-        color="primary-rl"
-        href="https://app.reveniu.com/checkout-custom-link/aSmPLaykZ0lAnrXpMcJUopEccz9F4kRE"
-      >
-        Hazte socio
-      </Button>
-    </div>
-  );
-}
-
-function Header({ title, imagePath, color }: HeaderProps) {
+function Header({ title, imagePath, color, description }: HeaderProps) {
   // bg-[#a21caf]
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const backgroundColor = color ? `bg-${color}` : "bg-primary";
 
   const headerStyles = `${backgroundColor} p-4 text-grayscale-2`;
 
-  const mobileMenuStyles = `w-full flex justify-between items-center mb-4 ${backgroundColor} p-4`;
-
   return (
     <header className={headerStyles}>
-      <div className="mx-auto flex max-w-6xl justify-between">
-        <div className="flex items-center gap-4">
-          <h1 className="text-2xl font-extrabold uppercase italic">{title}</h1>
-          <a
-            className="hidden md:flex"
-            href="https://americatransparente.org/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src={imagePath}
-              alt="Inicio de América Transparente"
-              className="h-8"
-            />
-          </a>
+      <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
+        <div className="flex flex-col justify-between">
+          <h1 className="mb-4 text-2xl font-extrabold uppercase italic text-light-neutral-100">
+            {title}
+          </h1>
+          <p className="text-xl font-semibold text-dark-text-100 lg:text-2xl">
+            {description}
+          </p>
         </div>
-        <Button
-          primary={false}
-          icon={true}
-          className="px-2 md:hidden"
-          onClick={() => setIsMenuOpen(true)}
-          aria-label="Opciones para apoyar al proyecto"
-        >
-          <Bars3Icon className="h-6 w-6 text-black" />
-        </Button>
-
-        <Dialog
-          open={isMenuOpen}
-          onClose={() => setIsMenuOpen(false)}
-          className="relative z-50"
-        >
-          <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
-          <div className="fixed inset-0 flex items-start justify-center">
-            <Dialog.Panel className="w-full rounded-b-2xl bg-white">
-              <div className={mobileMenuStyles}>
-                <a
-                  href="https://americatransparente.org/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    src={imagePath}
-                    alt="Inicio de América Transparente"
-                    className="h-8"
-                  />
-                </a>
-                <Button
-                  primary={false}
-                  icon={true}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="p-1"
-                >
-                  <XMarkIcon className="h-6 w-6 text-black" />
-                </Button>
-              </div>
-              <div className="px-4 pb-4">
-                <SupportUsButtons />
-              </div>
-            </Dialog.Panel>
+        <Card>
+          <div className="p-4">
+            <a
+              href="https://americatransparente.org/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={imagePath}
+                alt="Inicio de América Transparente"
+                className="inline h-8"
+              />
+              <span className="ml-2 inline text-lg font-extrabold text-light-text-100 dark:text-dark-text-100">
+                América Transparente
+              </span>
+            </a>
+            <p>
+              Somos una organización sin fines de lucro que busca entregar
+              herramientas, reportes y métodos que ayuden a la transparencia de
+              gobiernos y organismos públicos.
+            </p>
+            <div className="mt-2 flex flex-col gap-4 lg:flex-row">
+              <a
+                className={`w-full rounded-3xl ${backgroundColor} p-2 text-center font-bold text-white transition duration-300 hover:brightness-75 focus:brightness-110`}
+                href="https://app.reveniu.com/checkout-custom-link/guYWYTIWJqCUnNtZQRdIzpE3DFkAXtd1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Donar
+              </a>
+              <a
+                className={`w-full rounded-3xl ${backgroundColor} p-2 text-center font-bold text-white transition duration-300 hover:brightness-75 focus:brightness-110`}
+                href="https://app.reveniu.com/checkout-custom-link/aSmPLaykZ0lAnrXpMcJUopEccz9F4kRE"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Hazte socio
+              </a>
+            </div>
           </div>
-        </Dialog>
-
-        <div className="hidden md:flex">
-          <SupportUsButtons />
-        </div>
+        </Card>
       </div>
     </header>
   );

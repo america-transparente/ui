@@ -41,9 +41,9 @@ function SearchFilter({ config, title, label }: SearchFilterProps) {
               aria-label={label}
             >
               {open ? (
-                <ChevronUpIcon className="h-6 w-6" />
+                <ChevronUpIcon className="h-6 w-6 shrink-0" />
               ) : (
-                <ChevronDownIcon className="h-6 w-6" />
+                <ChevronDownIcon className="h-6 w-6 shrink-0" />
               )}
               <span className="whitespace-nowrap">{title}</span>
             </Button>
@@ -52,10 +52,11 @@ function SearchFilter({ config, title, label }: SearchFilterProps) {
             <div
               ref={setPopperElement}
               style={styles.popper}
-              className="mt-2 max-h-96 max-w-[15rem] overflow-auto rounded-xl border-2 border-grayscale-4 bg-grayscale-2"
+              className="border-grayscale-4 bg-grayscale-2 mt-2 max-h-96 max-w-[15rem] overflow-auto rounded-xl border-2 border-light-neutral-300 text-light-text-100  dark:border-dark-neutral-100 dark:text-dark-text-200
+              "
               {...attributes.popper}
             >
-              <Listbox.Options className="divide-y-2 divide-grayscale-3 outline-none">
+              <Listbox.Options className="divide-y-2 outline-none dark:divide-dark-neutral-100">
                 {items
                   .sort((a, b) => parseInt(b.value) - parseInt(a.value))
                   .map((item, index) => {
@@ -63,16 +64,28 @@ function SearchFilter({ config, title, label }: SearchFilterProps) {
                       item.label.charAt(0).toUpperCase() + item.label.slice(1);
 
                     return (
-                      <Listbox.Option
-                        key={index}
-                        value={item.value}
-                        className="p-1.5 hover:cursor-pointer hover:bg-grayscale-3"
-                      >
-                        <span className={item.isRefined ? "font-bold" : ""}>
-                          {item.label === "codigodeltrabajo"
-                            ? "Código del Trabajo"
-                            : label}
-                        </span>
+                      <Listbox.Option key={index} value={item.value}>
+                        {({ active }) => (
+                          <li
+                            className={
+                              active
+                                ? "hover:bg-light-300 bg-light-neutral-300 p-1.5 hover:cursor-pointer dark:bg-dark-neutral-300 dark:hover:bg-dark-neutral-300"
+                                : "bg-light-neutral-200 p-1.5 hover:cursor-pointer dark:bg-dark-neutral-200"
+                            }
+                          >
+                            <span
+                              className={
+                                item.isRefined
+                                  ? "font-extrabold dark:text-dark-text-100"
+                                  : ""
+                              }
+                            >
+                              {item.label === "codigodeltrabajo"
+                                ? "Código del Trabajo"
+                                : label}
+                            </span>
+                          </li>
+                        )}
                       </Listbox.Option>
                     );
                   })}

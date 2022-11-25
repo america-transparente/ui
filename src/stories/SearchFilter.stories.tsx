@@ -7,7 +7,10 @@ export default {
   component: SearchFilter,
   parameters: {
     backgrounds: {
-      values: [{ name: "app background", value: "#e7e5e4", default: true }],
+      values: [
+        { name: "ligh", value: "#e7e5e4", default: true },
+        { name: "dark", value: "#242424", default: true },
+      ],
     },
   },
 } as ComponentMeta<typeof SearchFilter>;
