@@ -1,3 +1,5 @@
+import React from "react";
+
 import { ComponentMeta } from "@storybook/react";
 import SearchFilter from "../components/search/filters/SearchFilter";
 import RegulequeFilters from "./examples/RegulequeFilters";

@@ -1,3 +1,5 @@
+import React from "react";
+
 import { Listbox } from "@headlessui/react";
 import { useState } from "react";
 import { useSortBy, UseSortByProps } from "react-instantsearch-hooks-web";

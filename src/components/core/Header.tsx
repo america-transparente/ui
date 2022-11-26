@@ -1,3 +1,4 @@
+import React from "react";
 import { SparklesIcon, LinkIcon } from "@heroicons/react/20/solid";
 import Button from "./Button";
 import Card from "./Card";

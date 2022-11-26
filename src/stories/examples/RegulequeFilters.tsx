@@ -1,3 +1,5 @@
+import React from "react";
+
 import { InstantSearch } from "react-instantsearch-hooks-web";
 import { instantMeiliSearch } from "@meilisearch/instant-meilisearch";
 import { SearchBar, SearchSortBy, SearchFilter } from "../../search";

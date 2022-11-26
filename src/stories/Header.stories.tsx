@@ -1,3 +1,5 @@
+import React from "react";
+
 import { InstantSearch } from "react-instantsearch-hooks-web";
 import { instantMeiliSearch } from "@meilisearch/instant-meilisearch";
 
@@ -30,11 +32,11 @@ export const DuenosDirectosHeader = () => (
   <Header
     title="Dueños Directos"
     imagePath={logoAT}
-    description="Dueños Directos es un buscador 
+    description="Dueños Directos es un buscador
     de documentos del Diario Oficial
     de Chile, que permite rápidamente
     buscar entre miles de constituciones
-    y otros archivos legales de 
+    y otros archivos legales de
     organizaciones."
     color="[#a21caf]"
   />
