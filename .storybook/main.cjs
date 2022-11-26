@@ -16,5 +16,6 @@ module.exports = {
   },
   docsPage: {
     docs: "automatic"
-  }
+  },
+  staticDirs: ['../public'],
 };
