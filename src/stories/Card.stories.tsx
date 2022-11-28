@@ -1,3 +1,5 @@
+import React from "react";
+
 import { ComponentMeta } from "@storybook/react";
 import Card from "../components/core/Card";
 import { RegulequeCard } from "./examples/RegulequeCard";

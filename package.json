@@ -29,8 +29,8 @@
   "scripts": {
     "prepare": "npm run build",
     "build": "tsup src/core.ts src/search.ts --format esm,cjs --treeshake --dts --minify",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet --fix"
   },
   "dependencies": {
@@ -38,10 +38,12 @@
     "@heroicons/react": "^2.0.13",
     "@meilisearch/instant-meilisearch": "^0.9.0",
     "@popperjs/core": "^2.11.6",
+    "@storybook/addon-postcss": "^2.0.0",
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
     "algoliasearch": "^4.14.2",
+    "postcss-loader": "^7.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-instantsearch-hooks-web": "^6.38.1",
@@ -97,6 +99,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-hooks": "^0.4.3",
     "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-storybook": "^0.6.7",
     "postcss": "^8.4.19",
     "prettier": "^2.8.0",
     "prettier-plugin-tailwindcss": "^0.1.13",

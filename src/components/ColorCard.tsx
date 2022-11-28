@@ -1,3 +1,5 @@
+import React from "react";
+
 interface ColorCardProps {
   color: string;
   colorName?: string;
