@@ -37,7 +37,7 @@ function Button({
 
   const primaryStyles = "text-white bg-primary border-primary/10";
   const secondaryStyles =
-    "text-light-text-100 dark:text-dark-text-100 bg-light-neutral-200 border-light-neutral-300 dark:bg-dark-neutral-200 dark:border-dark-neutral-100";
+    "text-light-text-100 dark:text-dark-text-100 bg-light-neutral-200 border-light-neutral-100 dark:bg-dark-neutral-200 dark:border-dark-neutral-100";
 
   const computedStyle = `${commonStyles} ${
     primary ? primaryStyles : secondaryStyles
