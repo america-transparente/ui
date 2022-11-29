@@ -15,13 +15,13 @@ function Header({ title, imagePath, color, description }: HeaderProps) {
 
   const backgroundColor = color ? `bg-${color}` : "bg-primary";
 
-  const headerStyles = `${backgroundColor} p-4 text-grayscale-2`;
+  const headerStyles = `${backgroundColor} px-4 py-6 text-grayscale-2`;
 
   return (
     <header className={headerStyles}>
       <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
         <div className="flex flex-col justify-between">
-          <h1 className="mb-4 text-2xl font-extrabold uppercase italic text-light-neutral-100">
+          <h1 className="mb-4 text-2xl font-extrabold uppercase italic text-white">
             {title}
           </h1>
           <p className="text-xl font-semibold text-dark-text-100 lg:text-2xl">
