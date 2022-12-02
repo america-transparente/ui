@@ -1,8 +1,5 @@
 import React from "react";
 
-import { InstantSearch } from "react-instantsearch-hooks-web";
-import { instantMeiliSearch } from "@meilisearch/instant-meilisearch";
-
 import { ComponentMeta } from "@storybook/react";
 import logoAT from "../assets/at_logo.webp";
 import Header from "../components/core/Header";

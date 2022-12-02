@@ -54,8 +54,7 @@ function SearchFilter({ config, title, label }: SearchFilterProps) {
             <div
               ref={setPopperElement}
               style={styles.popper}
-              className="mt-2 max-h-96 max-w-[15rem] overflow-auto rounded-xl border-2 border-light-neutral-100 text-light-text-100  dark:border-dark-neutral-100 dark:text-dark-text-200
-              "
+              className="mt-2 max-h-96 max-w-[15rem] overflow-auto rounded-xl border-2 border-light-neutral-100 text-light-text-100  dark:border-dark-neutral-100 dark:text-dark-text-200"
               {...attributes.popper}
             >
               <Listbox.Options className="divide-y-2 outline-none dark:divide-dark-neutral-100">
