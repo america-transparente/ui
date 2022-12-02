@@ -58,7 +58,7 @@ function Header({ title, imagePath, color, description }: HeaderProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Donar
+                Donar ahora
               </a>
               <a
                 className={`w-full rounded-3xl ${backgroundColor} p-2 text-center font-bold text-white transition duration-300 hover:brightness-75 focus:brightness-110`}

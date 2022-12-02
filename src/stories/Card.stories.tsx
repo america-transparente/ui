@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { ComponentMeta } from "@storybook/react";
+import DonationCard from "../components/core/DonationCard";
 import Card from "../components/core/Card";
+import Button from "../components/core/Button";
 import { RegulequeCard } from "./examples/RegulequeCard";
 
 export default {
@@ -63,3 +65,19 @@ export const RegulequeCards = () => (
     />
   </div>
 );
+
+export const DonationCardExample = () => {
+  const [isCardVisible, setIsCardVisible] = useState(false);
+
+  return (
+    <>
+      <Button primary onClick={() => setIsCardVisible(true)}>
+        Abrir tarjeta de donacion
+      </Button>
+      <DonationCard
+        showDonationCard={isCardVisible}
+        setShowDonationCard={setIsCardVisible}
+      />
+    </>
+  );
+};
