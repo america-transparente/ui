@@ -9,7 +9,11 @@ import {
 import { Listbox } from "@headlessui/react";
 import Button from "../Button";
 
-function ThemeToggle() {
+interface Props {
+  captureThemeChange: React.Dispatch<React.SetStateAction<string>>;
+}
+
+function ThemeToggle({ captureThemeChange }: Props) {
   // ! this code should be in the top html file in head tag
 
   // if (
@@ -31,6 +35,7 @@ function ThemeToggle() {
   const { styles, attributes } = usePopper(referenceElement, popperElement);
 
   function handleThemeChange(value: string) {
+    captureThemeChange(value);
     if (value === "light") return (localStorage.theme = "light");
     if (value === "dark") return (localStorage.theme = "dark");
     localStorage.removeItem("theme");
