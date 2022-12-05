@@ -29,8 +29,8 @@ function Header({
         <ThemeToggle captureThemeChange={captureThemeChange} />
       </div>
       <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
-        <div className="flex flex-col justify-between">
-          <h1 className="mb-4 text-2xl font-extrabold uppercase italic text-white">
+        <div className="space-y-4">
+          <h1 className="text-2xl font-extrabold uppercase italic text-white">
             {title}
           </h1>
           <p className="text-xl font-semibold text-dark-text-100 lg:text-2xl">
