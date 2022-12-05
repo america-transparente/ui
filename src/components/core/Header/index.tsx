@@ -7,9 +7,16 @@ interface HeaderProps {
   imagePath: string;
   color?: string;
   description: string;
+  captureThemeChange: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function Header({ title, imagePath, color, description }: HeaderProps) {
+function Header({
+  title,
+  imagePath,
+  color,
+  description,
+  captureThemeChange,
+}: HeaderProps) {
   // bg-[#a21caf]
 
   const backgroundColor = color ? `bg-${color}` : "bg-primary";
@@ -19,7 +26,7 @@ function Header({ title, imagePath, color, description }: HeaderProps) {
   return (
     <header className={headerStyles}>
       <div className="mx-auto mb-4 flex max-w-6xl justify-end">
-        <ThemeToggle />
+        <ThemeToggle captureThemeChange={captureThemeChange} />
       </div>
       <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
         <div className="flex flex-col justify-between">
