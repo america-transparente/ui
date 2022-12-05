@@ -1,7 +1,6 @@
-import React from "react";
+import React, { Dispatch } from "react";
 
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { Dispatch } from "react";
 import { Dialog } from "@headlessui/react";
 import Button from "./Button";
 import Card from "../core/Card";

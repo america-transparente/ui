@@ -96,7 +96,7 @@ function ThemeToggle({ captureThemeChange }: Props) {
                       }
                     >
                       <ComputerDesktopIcon className="h-5 w-5" />
-                      Tema Prederterminado
+                      Tema Predeterminado
                     </span>
                   )}
                 </Listbox.Option>
