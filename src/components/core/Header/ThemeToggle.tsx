@@ -46,11 +46,8 @@ function ThemeToggle({ captureThemeChange }: Props) {
       {({ open }) => (
         <>
           <Listbox.Button as="div" ref={setReferenceElement}>
-            <Button primary={false}>
-              <span className="flex items-center gap-1">
-                <SparklesIcon className="h-5 w-5" />
-                Tema de color
-              </span>
+            <Button primary={false} icon>
+              <SparklesIcon className="h-5 w-5" />
             </Button>
           </Listbox.Button>
           {open && (
