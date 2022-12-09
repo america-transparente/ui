@@ -1,5 +1,5 @@
 # America Transparente React Component Library
-**Warning**: this is still an experimental library
+This is a React component library with custom InstantSearch components used by the America Transparente Foundation to build UI for their MeiliSearch search engines.
 
 ## Getting Started
 - [Add Tailwind CSS](https://tailwindcss.com/docs/installation/framework-guides) to your React project
