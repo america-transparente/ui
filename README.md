@@ -1,4 +1,4 @@
-# America Transparente Design System
+# America Transparente React Component Library
 **Warning**: this is still an experimental library
 
 ## Getting Started
@@ -14,28 +14,46 @@ For components related to InstantSearch use module `@america-transparente/ui/sea
 
 ## Dependencies
 - tsup: bundles typescript `npm run build`
-- storybook: visualize components `npm run storybook`
+- Storybook: visualize components `npm run storybook`
+- ESLint: linting `npm run lint`
+- Semantic Release: to publish to NPM and auto generate releases to GitHub `npm run semantic-release`
 
 ## Colors
-We use "grayscale" as base colors and "primary" to easily identify different projects
 
 ### Primary
+the "primary" color should be unique for every project, to easily identify them
 - Reguleque: `#34911F`
 - Duenos Directos: `#a21caf`
 
-This is how the `tailwind.config.js` would look like for Reguleque
+### Tailwind Config
+This is how `theme` in `tailwind.config.js` would look like for Reguleque
 
 ```javascript
-theme: {
+  theme: {
     extend: {
       colors: {
-        primary: "#34911F"
-        grayscale: {
-          1: "#FFFFFF",
-          2: "#F2F2F2",
-          3: "#e7e5e4",
-          4: "#d1d1d1",
-          5: "#6E6E73",
+        primary: "#34911F",
+        light: {
+          neutral: {
+            100: "#D1D1D1",
+            200: "#F9F9F9",
+            300: "#E7E5E4",
+          },
+          text: {
+            100: "#000000",
+            200: "#525252",
+          },
+        },
+        dark: {
+          neutral: {
+            100: "#484848",
+            200: "#2F2F2F",
+            300: "#242424",
+          },
+          text: {
+            100: "#E4E4E4",
+            200: "#A0A0A0",
+          },
         },
       },
     },
