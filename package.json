@@ -31,7 +31,7 @@
     "build": "tsup src/core.ts src/search.ts --format esm,cjs --treeshake --dts --minify",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet --fix",
+    "lint": "tsc --noEmit && eslint \"*/**/*.{js,ts}\" --fix",
     "semantic-release": "semantic-release --branches main"
   },
   "dependencies": {

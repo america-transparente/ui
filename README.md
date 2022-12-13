@@ -1,4 +1,7 @@
 # America Transparente React Component Library
+
+[![NPM CI](https://github.com/america-transparente/ui/actions/workflows/pipeline.yml/badge.svg)](https://github.com/america-transparente/ui/actions/workflows/pipeline.yml)
+
 This is a React component library with custom InstantSearch components used by the America Transparente Foundation to build UI for their MeiliSearch search engines.
 
 ## Getting Started
