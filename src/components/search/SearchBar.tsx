@@ -37,6 +37,14 @@ function SearchBar({
     if (captureSearchedQuery) captureSearchedQuery(query);
   }, [query]);
 
+  useEffect(() => {
+    document.addEventListener("keydown", (e: KeyboardEvent) => {
+      if (e.key === "/") {
+        searchInputRef.current?.focus();
+      }
+    });
+  }, []);
+
   return (
     <div
       className="flex items-center rounded-3xl border border-light-neutral-100 bg-light-neutral-200 text-light-text-100
@@ -48,11 +56,16 @@ function SearchBar({
       <input
         type="search"
         ref={searchInputRef}
-        onChange={(e) => setDebouncedSearchQuery(e.target.value)}
+        onChange={(e) =>
+          e.target.value !== "/" && setDebouncedSearchQuery(e.target.value)
+        }
         value={debouncedSearchQuery}
         className="w-full bg-transparent p-2 focus:outline-dotted focus:outline-2 focus:outline-primary/40"
         placeholder={placeholder}
       />
+      <div className="rounded border border-light-text-200 bg-light-neutral-100 py-0.5 px-3 font-bold dark:border-dark-text-100 dark:bg-dark-neutral-100">
+        /
+      </div>
       <button
         aria-label="Limpiar búsqueda"
         onClick={() => {
