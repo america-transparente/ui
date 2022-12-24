@@ -16,6 +16,7 @@ This is a React component library with custom InstantSearch components used by t
 For components related to InstantSearch use module `@america-transparente/ui/search`, the rest can be found in `@america-transparente/ui/core`
 
 ## Dependencies
+- React on Webpack, using Tailwind CSS for Styling, Headless UI for unstyled components and InstantSearch Hooks for custom components for our search engines.
 - tsup: bundles typescript `npm run build`
 - Storybook: visualize components `npm run storybook`
 - ESLint: linting `npm run lint`
